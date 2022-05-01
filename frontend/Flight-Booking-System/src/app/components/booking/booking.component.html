@@ -1,0 +1,59 @@
+<div class="i-form">
+    <h1 class="title">Search Flight</h1>
+    <form action="" class="form1" [formGroup]="searchBooking" (ngSubmit)="getBooking()">
+
+        <div class="form_div">
+            <label for="" class="form_label">Flight Id</label>
+            <input type="text" class="form_input" placeholder="Flight Id" name="flightId" formControlName="flightId">
+            <span *ngIf="searchBooking.controls['flightId']?.invalid && searchBooking.controls['flightId']?.touched"
+                style="color: rgb(255, 41, 41);">*Required</span>
+
+        </div>
+        <div class="form_div">
+            <label for="" class="form_label">Departure Date</label>
+            <input type="date" class="form_input" name="departureDate" formControlName="departureDate" required>
+            <span
+                *ngIf="searchBooking.controls['departureDate']?.invalid && searchBooking.controls['departureDate']?.touched"
+                style="color: rgb(255, 41, 41);">*Required</span>
+        </div>
+        <button type="submit" class="button" value="Search">Search</button>
+    </form>
+</div>
+<div class="table">
+    <div class="content">
+        <div class="head">
+            <h3>
+                <a>All Passengers in this flight</a>
+            </h3>
+        </div>
+        <div class="table">
+            <table>
+
+                <tr>
+                    <th>#</th>
+                    <th>TicketId</th>
+                    <th>Passenger Name</th>
+                    <th>Passenger Age</th>
+                    <th>Passenger Gender</th>
+                    <th>Flight Source</th>
+                    <th>Flight Destination</th>
+                    <th>Checked In</th>
+                </tr>
+
+                <tr *ngFor="let data of checkIn; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{data.ticketId}}</td>
+                    <td>{{data.passengerName}}</td>
+                    <td>{{data.passengerAge}}</td>
+                    <td>{{data.passengerGender}}</td>
+                    <td>{{data.source}}</td>
+                    <td>{{data.destination}}</td>
+                    <td *ngIf="!data.checkedIn" style="color: red;"><i class="fa fa-times fa-2x" aria-hidden="true"></i>
+                    <td *ngIf="data.checkedIn" style="color: green;"><i class="fa fa-check fa-2x"
+                            aria-hidden="true"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

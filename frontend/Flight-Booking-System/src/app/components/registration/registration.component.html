@@ -1,0 +1,96 @@
+<body>
+
+    <div class="container">
+        <div class="title">
+            User Registeration Form
+        </div>
+        <form class="form" [formGroup]="registrationForm" (ngSubmit)="registration(registrationForm)">
+            <input type="hidden" th:field="*{id}" />
+            <div class=" user-details">
+                <div class="input-box">
+                    <span class="details">First Name</span>
+                    <input name="firstName" type="text" placeholder="Enter Your First Name" id="firstName"
+                        formControlName="firstName" required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                        !registrationForm.controls['firstName'].valid && registrationForm.controls['firstName']?.touched">Enter Valid
+                            First Name</span>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Last Name</span>
+                    <input type="text" placeholder="Enter Your Last Name" name="lastname" id="email"
+                        formControlName="lastName" required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                            !registrationForm.controls['lastName'].valid && registrationForm.controls['lastName']?.touched">Enter
+                            Valid
+                            Last Name</span>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Email Id</span>
+                    <input type="email" placeholder="Enter Your Email Id" name="emailId" id="email"
+                        formControlName="emailId" required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                            !registrationForm.controls['emailId'].valid && registrationForm.controls['emailId']?.touched">Enter
+                            Valid
+                            Email Id</span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Mobile Number</span>
+                    <input type="number" placeholder="Enter Your Mobile Number" name="mobile" id="mobile" maxlength="10"
+                        formControlName="mobile" required>
+                    <div>
+                        <span style="color: red;" *ngIf=" 
+            !registrationForm.controls['mobile'].valid && registrationForm.controls['mobile']?.touched">Enter
+                            Valid
+                            Mobile Number</span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter Your Username" name="username" id="username"
+                        formControlName="username" required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                        !registrationForm.controls['username'].valid && registrationForm.controls['username']?.touched">Enter
+                            Valid
+                            Username</span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" placeholder="Enter Your Password" name="password" id="password"
+                        formControlName="password" maxlength="10" required>
+                    <div>
+                        <span style="color: red;" *ngIf=" 
+            !registrationForm.controls['password'].valid && registrationForm.controls['password']?.touched">Enter
+                            Valid
+                            Password</span>
+                    </div>
+                </div>
+            </div>
+            <div class="check-details">
+                <div class="check">
+                    <input type="checkbox" name="agree" id="agree" style="margin-right: 10px; margin-top: 7px;">
+                    <span>Agree to Terms & Conditions</span>
+                </div>
+                <a [routerLink]="['../login']" style="cursor: pointer;">Already A User?</a>
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Resgiter New User">
+            </div>
+        </form>
+    </div>
+
+</body>

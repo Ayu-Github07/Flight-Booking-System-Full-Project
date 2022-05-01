@@ -1,0 +1,139 @@
+<body>
+
+    <section class="booking" id="booking">
+
+        <div class="heading">
+            <span>Book Your Journey</span>
+            <h1>Adventure Awaits You</h1>
+        </div>
+
+
+        <div class="table-container">
+            <div class="table-heading">
+                <span>Flight Selected:</span>
+            </div>
+            <table class="table1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Flight Name</th>
+                        <th>Source City</th>
+                        <th>Destination City</th>
+                        <th>Departure Date</th>
+                        <th>Arrival Time</th>
+                        <th>Seats Remaining</th>
+                        <th>Fare</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="../../../assets/images/air-india.svg" alt="">
+                        </td>
+                        <td>{{flight.flightName}}</td>
+                        <td>{{flight.sourceAirportCity}}</td>
+                        <td>{{flight.destinationAirportCity}}</td>
+                        <td>{{flight.departureDate}}</td>
+                        <td>{{flight.arivalTime}}</td>
+                        <td>{{flight.seats}}</td>
+                        <td>{{flight.fare}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <section class="form1"></section>
+        <div class="form">
+
+        </div>
+    </section>
+    <div class="container">
+        <div class="form-heading">
+            Passenger Details
+        </div>
+        <div class="inputBox">
+            <input type="submit" value="Add Passenger" (click)="addForm()">
+        </div>
+        <hr style="margin-bottom: 2rem; margin-top: 1rem; border-width: 1px; background-color: #222222;">
+        <form action="" #passengerForm="ngForm" (ngSubmit)="onSubmit()">
+
+            <div class="form" *ngFor="let obj of dataArray;  let i=index">
+                <div class="details">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="">First Name</label>
+                            <input type="text" name="firstName{{i}}" id="" placeholder="Enter Your First Name"
+                                [(ngModel)]="obj.firstName" #firstName="ngModel" required>
+                            <div *ngIf="firstName.errors?.['required'] && firstName.touched"
+                                style="color: rgb(255, 41, 41); font-size: 0.9rem;">
+                                First Name is required.
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label for="">Last Name</label>
+                            <input type="text" name="lastName{{i}}" id="" placeholder="Enter Your Last Name"
+                                [(ngModel)]="obj.lastName" #lastName="ngModel" required>
+
+                            <div *ngIf="lastName.errors?.['required'] && lastName.touched"
+                                style="color: rgb(255, 41, 41); font-size: 0.9rem;">
+                                Last Name is required.
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label for="">Age</label>
+                            <input type="number" name="age{{i}}" id="" placeholder="Enter Your Age" min="1"
+                                [(ngModel)]="obj.age" #age="ngModel" required>
+
+                            <div *ngIf="age.errors?.['required'] && age.touched"
+                                style="color: rgb(255, 41, 41); font-size: 0.9rem;">
+                                Age is required.
+                            </div>
+                        </div>
+                        <div class="input-field" *ngIf="i!=0">
+                            <div class="input-box">
+                                <input type="submit" value="Remove Passenger" class="remove" (click)="removeForm(i)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="label" style="font-size: 12px; color: #333333; margin-bottom: 5px; margin-top: 10px;">
+                        Gender
+                    </div>
+                    <div class="radio-group">
+                        <label for="" class="radio">
+                            <input type="radio" name="gender{{i}}" id="" value="Male" [(ngModel)]="obj.gender" required>
+                            Male
+                            <span></span>
+                        </label>
+                        <label for="" class="radio">
+                            <input type="radio" name="gender{{i}}" id="" value="Female" [(ngModel)]="obj.gender"
+                                required>
+                            Female
+                            <span></span>
+                        </label>
+                        <label for="" class="radio">
+                            <input type="radio" name="gender{{i}}" id="" value="Others" [(ngModel)]="obj.gender"
+                                required>
+                            Others
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+                <hr style="margin-bottom: 2rem; margin-top: 1rem; border-width: 2px; background-color: #222222;">
+            </div>
+            <button class="nextBtn" [disabled]="passengerForm.invalid">
+                <span>Book Now</span>
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
+            <div class="fare">
+                <h2>Total Fare :
+                    <span>Rs.{{fare*dataArray.length}}</span>
+                </h2>
+            </div>
+        </form>
+    </div>
+</body>
+
+<!-- {{flight|json}} -->

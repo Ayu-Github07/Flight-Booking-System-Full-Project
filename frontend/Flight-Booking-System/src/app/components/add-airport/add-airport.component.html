@@ -1,0 +1,47 @@
+<body>
+
+    <div class="container">
+        <div class="title">
+            {{title}}
+        </div>
+        <form class="form" [formGroup]="airportForm" (ngSubmit)="onSubmit(airportForm)">
+            <input type="hidden" />
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Airport Id</span>
+                    <input type="text" placeholder="Enter Ariport Id" name="airportId" formControlName="airportId"
+                        required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                                !airportForm.controls['airportId'].valid && airportForm.controls['airportId']?.touched">*Required</span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Airport Name</span>
+                    <input type="text" placeholder="Enter Ariport Name" name="airportName" formControlName="airportName"
+                        required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                                    !airportForm.controls['airportName'].valid && airportForm.controls['airportName']?.touched">*Required</span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Airport City</span>
+                    <input type="text" placeholder="Enter Airport City" name="airportCity" formControlName="airportCity"
+                        required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                                    !airportForm.controls['airportCity'].valid && airportForm.controls['airportCity']?.touched">*Required</span>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit" value="Login">{{button}}</button>
+            </div>
+        </form>
+    </div>
+
+</body>

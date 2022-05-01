@@ -1,0 +1,73 @@
+<body>
+    <div class="i-form">
+        <h1 class="title">Search Flight</h1>
+        <form action="" class="form1" [formGroup]="flightForm" (ngSubmit)="getFlight">
+
+            <div class="form_div">
+                <label for="" class="form_label">Source City</label>
+                <input type="text" class="form_input" placeholder="Source" name="source" formControlName="source">
+                <span *ngIf="source?.invalid && source?.touched" style="color: rgb(255, 41, 41);">*Required</span>
+
+            </div>
+            <div class="form_icon">
+                <img src="../../../assets/images/icon2.svg" alt="" height="30px" width="30px">
+            </div>
+            <div class="form_div">
+                <label for="" class="form_label">Destination City</label>
+                <input type="text" class="form_input" placeholder="Destination" name="destination"
+                    formControlName="destination" required>
+                <span *ngIf="destination?.invalid && destination?.touched"
+                    style="color: rgb(255, 41, 41);">*Required</span>
+
+            </div>
+            <div class="form_div">
+                <label for="" class="form_label">Departure Date</label>
+                <input type="date" class="form_input" name="departureDate" formControlName="departureDate" required>
+                <span *ngIf="departureDate?.invalid && departureDate?.touched"
+                    style="color: rgb(255, 41, 41);">*Required</span>
+            </div>
+            <button type="submit" class="button" value="Search" (click)="getFlight()">Search</button>
+        </form>
+    </div>
+    <div class="table-container">
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Flight Name</th>
+                    <th>Source City</th>
+                    <th>Destination City</th>
+                    <th>Departure Date</th>
+                    <th>Arrival Time</th>
+                    <th>Seats Remaining</th>
+                    <th>Fare</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let flight of flightDetails">
+                    <td><img src="../../../assets/images/air-india.svg" alt="">
+                    </td>
+                    <td>{{flight.flightName}}</td>
+                    <td>{{flight.sourceAirportCity}}</td>
+                    <td>{{flight.destinationAirportCity}}</td>
+                    <td>{{flight.departureDate}}</td>
+                    <td>{{flight.arivalTime}}</td>
+                    <td>{{flight.seats}}</td>
+                    <td>{{flight.fare}}</td>
+                    <td>
+                        <button *ngIf="!loggedIn" type="button" class="btn" (click)="navigate()">Login</button>
+
+                        <button *ngIf="loggedIn" href="#" class="btn" [routerLink]="['../booking']"
+                            (click)="setFlightDetails(flight)">Book
+                        </button>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+    </div>
+</body>

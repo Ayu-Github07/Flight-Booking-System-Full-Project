@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffff;
+}
+
+.contact .content {
+  max-width: 700px;
+  text-align: center;
+}
+
+.contact .content h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #29d9d5;
+}
+
+.contact .content p {
+  font-weight: 300;
+  color: #ffff;
+}

@@ -1,0 +1,82 @@
+<body>
+    <h1>Your Bookings</h1>
+
+    <div *ngFor="let check of checkIn;let i = index;">
+
+        <div>
+
+            <div class="col-md-8 mt-3">
+                <div class="card mb-3 content">
+                    <h3 class="m-3 pt-3" *ngIf="!check.checkedIn">Booking Successful</h3>
+                    <h3 class="m-3 pt-3" *ngIf="check.checkedIn">Checked-In Successful</h3>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Ticket Id</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                {{check.ticketId}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row" *ngIf="check.checkedIn">
+                            <div class="col-md-3">
+                                <h5>Seat allotted are:</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                {{seat[i]}}
+                            </div>
+                        </div>
+                        <hr *ngIf="check.checkedIn">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Passenger Name</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                {{check.passengerName}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Passenger Age</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                {{check.passengerAge}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Flight Source</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                {{check.source}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Flight Destination</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                {{check.destination}}
+                            </div>
+                        </div>
+                        <hr>
+
+                        <button type="button" *ngIf="!check.checkedIn" class="btn btn-danger" style="margin: 0;"
+                            (click)="cancelTicket(check.ticketId)">Cancel
+                            Ticket</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>

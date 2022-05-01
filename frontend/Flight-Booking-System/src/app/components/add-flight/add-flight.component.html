@@ -1,0 +1,112 @@
+<body>
+
+    <div class="container">
+        <div class="title">
+            {{title}}
+        </div>
+        <form class="form" [formGroup]="flightForm" (ngSubmit)="onSubmit()">
+            <input type="hidden" th:field="*{id}" />
+            <div class=" user-details">
+                <div class="input-box">
+                    <span class="details">Flight Id</span>
+                    <input name="id" type="text" placeholder="Enter The Flight Id" id="id" formControlName="id"
+                        required>
+                    <div>
+                        <span style="color: red;" *ngIf=" 
+                        !flightForm.controls['id'].valid && flightForm.controls['id']?.touched">Enter Valid
+                            Flight Id</span>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Flight Name</span>
+                    <input type="text" placeholder="Enter The Flight Name" name="flightName" id="email"
+                        formControlName="flightName" required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                            !flightForm.controls['flightName'].valid && flightForm.controls['flightName']?.touched">Enter
+                            Valid
+                            Name</span>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Source City Id</span>
+                    <input type="number" placeholder="Enter The Source Airport Id" name="sourceCityId" id="email"
+                        formControlName="sourceCityId" required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" !flightForm.controls['sourceCityId'].valid && flightForm.controls['sourceCityId']?.touched">Enter
+                            Valid
+                            Source Airport Id</span>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Destination City Id</span>
+                    <input type="text" placeholder="Enter The Destination Airport Id" name="destinationCityId"
+                        id="email" formControlName="destinationCityId" required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                            !flightForm.controls['destinationCityId'].valid && flightForm.controls['destinationCityId']?.touched">Enter
+                            Valid
+                            Destination City</span>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Departure Date</span>
+                    <input type="date" placeholder="Enter The Departure Date" name="departureDate" id="departureDate"
+                        formControlName="departureDate" required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                            !flightForm.controls['departureDate'].valid && flightForm.controls['departureDate']?.touched">Enter
+                            Valid
+                            Date</span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Arrival Time</span>
+                    <input type="time" step="1" placeholder="Enter The Arrival Time" name="arivalTime" id="arivalTime"
+                        maxlength="10" formControlName="arivalTime" required>
+                    <div>
+                        <span style="color: red;" *ngIf=" 
+            !flightForm.controls['arivalTime'].valid && flightForm.controls['arivalTime']?.touched">Enter
+                            Valid
+                            Time</span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Seats Capacity</span>
+                    <input type="text" placeholder="Enter The Seats" name="seats" id="seats" formControlName="seats"
+                        required>
+                    <div>
+                        <span style="color: red;" *ngIf=" 
+                        !flightForm.controls['seats'].valid && flightForm.controls['seats']?.touched">Enter
+                            Valid
+                            Seats</span>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="details">Fare</span>
+                    <input type="number" placeholder="Enter The Fare" name="fare" id="fare" formControlName="fare"
+                        maxlength="10" required>
+                    <div>
+                        <span style="color: red;" *ngIf=" 
+            !flightForm.controls['fare'].valid && flightForm.controls['fare']?.touched">Enter
+                            Valid
+                            Fare</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <input type="submit" value="{{button}}">
+            </div>
+        </form>
+    </div>
+
+</body>

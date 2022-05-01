@@ -1,0 +1,18 @@
+<div class="popup center">
+    <div class="icon">
+        <i class="fa fa-check"></i>
+    </div>
+    <div class="title">
+        Success!!
+    </div>
+    <div class="description">
+        <h5>Your Flight Ticket Has Been Booked Successfully!</h5>
+        <p style="margin-top: 20px;">Your Ticked Id is: <span
+                style="color: #1ca086; font-size: 20px;">{{bookingDetails.ticketId}}</span></p>
+    </div>
+    <div class="dismiss-btn">
+        <button id="dismiss-popup-btn" (click)="generatePdf()">
+            Download Your Ticket Here
+        </button>
+    </div>
+</div>

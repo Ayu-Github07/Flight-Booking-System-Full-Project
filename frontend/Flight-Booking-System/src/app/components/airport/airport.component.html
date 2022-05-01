@@ -1,0 +1,34 @@
+<body>
+
+    <div class="filter"></div>
+
+    <div class="content">
+        <div class="head">
+            <h3>
+                <a [routerLink]="['../add-airport']"><i class="fa fa-plus-square-o" aria-hidden="true"></i>Add Airport
+                    Details</a>
+            </h3>
+        </div>
+        <div class="table">
+            <table>
+
+                <tr>
+                    <th>#</th>
+                    <th>Airport Name</th>
+                    <th>Airport City</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                <tr *ngFor="let airport of airportDetails; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{airport.airportName}}</td>
+                    <td>{{airport.airportCity}}</td>
+                    <td> <button type="button" class="btn" (click)="updateAirport(airport)">Update</button></td>
+                    <td><button type="button" class="btn" (click)="deleteAirport(airport.airportId)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,100 @@
+<body>
+
+    <section class="booking" id="booking">
+
+        <div class="heading">
+            <span>Payment Karo!</span>
+            <h1>Alas! how deeply painful is all payment!</h1>
+        </div>
+
+
+        <div class="table-container">
+            <div class="table-heading">
+                <span>Flight Selected:</span>
+            </div>
+            <table class="table1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Flight Name</th>
+                        <th>Source City</th>
+                        <th>Destination City</th>
+                        <th>Boarding Date</th>
+                        <th>Arrival Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="../../../assets/images/air-india.svg" alt="">
+                        </td>
+                        <td>{{flight.flightName}}</td>
+                        <td>{{flight.sourceAirportCity}}</td>
+                        <td>{{flight.destinationAirportCity}}</td>
+                        <td>{{flight.departureDate}}</td>
+                        <td>{{flight.arivalTime}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="passenger">
+            <div class="col-md-8 mt-3" *ngFor="let passenger of passengers">
+                <div class="card mb-3 content">
+                    <h1 class="heading m-3 pt-3">Passengers Details</h1>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>First Name</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                {{passenger.firstName}}
+                            </div>
+                        </div>
+                        <hr style="color: black;">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Last Name</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                {{passenger.lastName}}
+                            </div>
+                        </div>
+                        <hr style="color: black;">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Age</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                {{passenger.age}}
+                            </div>
+                        </div>
+                        <hr style="color: black;">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Gender</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                {{passenger.gender}}
+                            </div>
+                        </div>
+                        <hr style="color: black;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fare">
+            <div class="head">
+                <h2>Total Fare: <span>{{fare}}</span> </h2>
+            </div>
+        </div>
+        <button id="rzp-button1" class="button" type="button" (click)="pay()">
+            <span class="button-text">Pay Now</span>
+            <span class="button-icon">
+
+                <img src="../../../assets/images/pay2.png" alt="">
+            </span>
+        </button>
+    </section>
+
+</body>

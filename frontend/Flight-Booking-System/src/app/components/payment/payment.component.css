@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background-color: #222222;
+  color: #ffff;
+}
+
+section {
+  padding: 3rem 9%;
+  color: #ffff;
+  height: 100%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.heading span {
+  color: #29d9d5;
+  font-size: 1.5rem;
+}
+
+.heading h1 {
+  font-size: 3rem;
+  color: #ffff;
+  margin-top: .5rem;
+}
+
+
+.table1 {
+  background-color: #ffffff;
+  font-family: sans-serif;
+}
+
+.table-container {
+  height: 10vh;
+  padding: 0 10%;
+  margin: 10px auto 0;
+}
+
+.table-heading {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.table1 {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table1 thead {
+  background-color: #1ca086;
+}
+
+.table1 thead tr th {
+  font-size: 1rem;
+  font-weight: medium;
+  text-align: center;
+  letter-spacing: 0.35px;
+  color: #fff;
+  opacity: 1;
+  padding: 12px;
+  vertical-align: top;
+  border: 1px solid rgba(0, 169, 136, 1);
+}
+
+.table1 tbody tr td {
+  font-size: 14px;
+  letter-spacing: 0.35px;
+  font-weight: normal;
+  color: #000000;
+  background-color: #ebebeb;
+  padding: 8px;
+  text-align: center;
+  border: 2px solid rgba(0, 169, 136, 1);
+  ;
+
+}
+
+
+.table1 tbody tr td .btn {
+  margin-top: 4px;
+  margin-left: 0px;
+}
+
+.table1 tbody tr td img {
+  height: 60px;
+  width: 60px;
+  text-decoration: none;
+}
+
+.form1 {
+  margin-top: 50px;
+  margin-left: 30%;
+}
+
+.passenger {
+  margin-top: 180px;
+  margin-left: 18%;
+}
+
+.col-md-8 {
+  margin-top: 3px;
+}
+
+.card {
+  margin-bottom: 3px;
+}
+
+.card .heading {
+  margin: 3px;
+  padding-top: 3px;
+  color: #1ca086;
+  font-size: 20px;
+
+}
+
+.card-body {
+  margin-top: 12px;
+  margin-bottom: 30px;
+}
+
+.row {
+  width: 100%;
+  margin-left: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.col-md-3 {
+  color: #222222;
+}
+
+.col-md-3 h5 {
+  font-size: 16px;
+}
+
+.text-secondary {
+  margin-left: 2rem;
+}
+
+.fare {
+  margin-left: 10%;
+}
+
+.button {
+  margin-top: 10px;
+  margin-left: 40%;
+  display: inline-flex;
+  height: 50px;
+  padding: 0;
+  background: #005c4a;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #008168;
+}
+
+.button:active {
+  background: #009578;
+}
+
+.button-text,
+.button-icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+  height: 100%;
+  font-weight: 500;
+}
+
+.fare {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fare .head span {
+  color: #009578;
+}

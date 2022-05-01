@@ -1,0 +1,28 @@
+<body>
+
+    <div class="container">
+        <div class="title">
+            Check In to enjoy your ride
+        </div>
+        <form class="form" [formGroup]="checkinForm" (ngSubmit)="onSubmit()">
+            <input type="hidden" />
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Ticket Id</span>
+                    <input type="text" placeholder="Enter Your Ticket Id" name="ticketId" formControlName="ticketId"
+                        required>
+                    <div>
+                        <span style="color: red;"
+                            *ngIf=" 
+                                !checkinForm.controls['ticketId'].valid && checkinForm.controls['ticketId']?.touched">*Required</span>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit" value="Login">Check In</button>
+            </div>
+        </form>
+    </div>
+
+
+</body>

@@ -1,0 +1,74 @@
+<body>
+    <div class="main-bar">
+        <nav>
+            <input type="checkbox" name="" id="">
+            <label for="check" class="checkbtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <div class="logo-header"><a href="#">Flig<span>ht.</span></a></div>
+
+            <ul>
+                <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['']"><i
+                            class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+
+
+                <li *ngIf="!admin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a
+                        [routerLink]="['flight-search']"><i class="fa fa-plane" aria-hidden="true"></i>All Flight</a>
+                <li *ngIf="admin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a
+                        [routerLink]="['airport-details']"><i class="fa fa-map-marker" aria-hidden="true"></i>All
+                        Airports</a>
+                </li>
+
+
+                <li *ngIf="!admin" [routerLinkActive]="['active']"><a [routerLink]="['about']"><i class="fa fa-user"
+                            aria-hidden="true"></i>About</a>
+                </li>
+                <li *ngIf="admin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a
+                        [routerLink]="['flight-details']"><i class="fa fa-plane" aria-hidden="true"></i>All Flights</a>
+                </li>
+
+                <li *ngIf="admin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a
+                        [routerLink]="['booking-details']"><i class="fa fa-check" aria-hidden="true"></i>All
+                        Bookings</a>
+                </li>
+
+
+                <li *ngIf="!admin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a href="#"
+                        [routerLink]="['contact']"><i class="fa fa-phone" aria-hidden="true"></i>Contact
+                        Us</a></li>
+
+                <li *ngIf="!admin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a href="#"
+                        [routerLink]="['check-in']"><i class="fa fa-ticket" aria-hidden="true"></i>CheckIn</a></li>
+                <li *ngIf="admin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a
+                        [routerLink]="['ticket-details']"><i class="fa fa-ticket" aria-hidden="true"></i>Tickets</a>
+                </li>
+
+
+                <li *ngIf="!loggedIn" [routerLinkActive]="['active']"><button id="login"
+                        [routerLink]="['register']">Sign Up</button>
+                </li>
+
+                <li *ngIf="!loggedIn" [routerLinkActive]="['active']" data-toggle="modal" data-target="#exampleModal"
+                    id="login">
+                    <button [routerLink]="['login']">Sign
+                        In</button>
+                </li>
+
+                <li *ngIf="loggedIn && !admin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a href="#" [routerLink]="['profile']">{{username}}</a>
+                </li>
+                <li *ngIf="loggedIn && admin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a [routerLink]="['admin']">Admin</a>
+                </li>
+                <li *ngIf="loggedIn">
+                    <button type="button" (click)="logoutUser()">Logout</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+</body>

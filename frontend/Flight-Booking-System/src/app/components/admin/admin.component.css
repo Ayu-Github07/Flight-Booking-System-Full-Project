@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.banner {
+  background: url("../../../assets/images/bg5.jpg");
+  background-position: center left;
+  background-size: cover;
+  height: 100vh;
+  opacity: 0.4;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+
+  top: 40%;
+  left: 8%;
+  position: absolute;
+  align-items: center;
+
+}
+
+.container h1 {
+  text-align: center;
+  color: rgb(233, 232, 232);
+  font-size: 70px;
+  font-weight: bold;
+
+}
+
+.container h1 span {
+
+  font-size: 40px;
+}
+
+.btn {
+  margin-top: 20px;
+  margin-left: 38%;
+}
+
+.btn a {
+  text-decoration: none;
+}
+
+.button {
+
+  display: inline-flex;
+  height: 50px;
+  padding: 0;
+  background: #005c4a;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #008168;
+}
+
+.button:active {
+  background: #009578;
+}
+
+.button-text,
+.button-icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+  height: 100%;
+  font-weight: 500;
+}

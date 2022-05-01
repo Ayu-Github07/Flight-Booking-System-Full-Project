@@ -1,0 +1,31 @@
+<body>
+
+    <div class="container">
+        <div class="title">
+            Login Form
+        </div>
+        <form class="form" (ngSubmit)="onSubmit()">
+            <input type="hidden" th:field="*{id}" />
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter Your Username" name="username" id="username"
+                        [(ngModel)]="credentials.username" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" placeholder="Enter Your Password" name="password" id="password"
+                        [(ngModel)]="credentials.password" required>
+                </div>
+            </div>
+            <div class="check">
+                <a [routerLink]="['../register']">New User?</a>
+                <a [routerLink]="['../forgot-password']">Forgot Password?</a>
+            </div>
+            <div class="button">
+                <button type="submit" value="Login" (click)="onSubmit()">Login</button>
+            </div>
+        </form>
+    </div>
+
+</body>

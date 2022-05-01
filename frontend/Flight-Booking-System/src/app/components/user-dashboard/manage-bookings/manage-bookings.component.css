@@ -1,0 +1,11 @@
+body {
+  max-height: max-content;
+  max-width: 100wh;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #f4f7fa;
+}
+
+.col-md-8 {
+  background-color: #f4f7fa;
+}
